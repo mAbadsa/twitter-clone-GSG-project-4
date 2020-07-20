@@ -1,0 +1,19 @@
+.twitter-app {
+  height: 100vh;
+  display: flex;
+}
+
+.header {
+  min-height: 400px;
+  align-items: flex-end;
+}
+
+.header_nav {
+  min-height: 400px;
+  align-items: flex-end;
+}
+
+.main {
+  min-height: 400px;
+  align-items: flex-start;
+}
