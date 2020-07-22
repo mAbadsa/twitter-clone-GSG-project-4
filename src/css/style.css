@@ -12,15 +12,6 @@ body {
   flex-direction: row;
 }
 
-.main {
-  display: flex;
-  flex-direction: row;
-  min-height: 400px;
-  min-width: 77%;
-  background-color: burlywood;
-  justify-content: stretch;
-}
-
 .header {
   min-height: 400px;
   display: flex;
@@ -78,6 +69,8 @@ body {
 
 .header-nav__navlink {
   position: relative;
+  /* margin: 8px;
+  padding: 10px; */
   flex-direction: column;
   outline-style: none;
   align-items: flex-start;
@@ -92,6 +85,7 @@ body {
 
 .header-nav__navlink:hover > .header-nav__navlink_content_box {
   background-color: rgba(29, 161, 242, 0.1);
+  color: #1da1f2;
   transition-property: background-color;
   transition-duration: 0.2s;
 }
@@ -99,13 +93,14 @@ body {
 .header-nav__navlink_content_box {
   width: fit-content;
   border-radius: 44px;
-  padding: 10px 25px 10px 10px;
+  padding: 15px 25px 15px 10px;
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
   transition-property: background-color;
   transition-duration: 0.2s;
+  margin-bottom: 3px;
 }
 
 .header-nav__navlink_content_box__icon {
@@ -187,7 +182,8 @@ body {
   width: 90%;
   border-radius: 49px;
   background-color: #1da1f2;
-  margin-top: 0.8rem;
+  margin-top: 0.6rem;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 28px;
   cursor: pointer;
 }
 
@@ -195,7 +191,7 @@ body {
   text-decoration: none;
   min-width: calc(78.89px);
   min-height: 49px;
-  background-color: rgb(29, 161, 242);
+  background-color: #1da1f2;
   transition-duration: 0.2s;
   transition-property: background-color, box-shadow;
 }
@@ -221,12 +217,6 @@ body {
   background-color: crimson;
   width: 25%;
   min-height: 49px;
-}
-
-.feed {
-  justify-content: flex-start;
-  min-width: 75%;
-  background-color: darkmagenta;
 }
 
 /* User menu option */

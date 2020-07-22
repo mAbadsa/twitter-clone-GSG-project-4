@@ -1,0 +1,211 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: Roboto, Ubuntu, sans-serif;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  min-height: 400px;
+  min-width: 77%;
+  justify-content: stretch;
+  align-items: flex-start;
+}
+
+.main .feed {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 57%;
+  border-right: 1px solid rgb(230, 236, 240);
+  border-left: 1px solid rgb(230, 236, 240);
+}
+
+.newfeed {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.newfeed .newfeed__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 53px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom: 1px solid rgba(29, 161, 242, 0.1);
+}
+
+.newfeed__header h2 {
+  line-height: 1.3125;
+  font-weight: 800;
+  font-size: 19px;
+  color: rgb(20, 23, 26);
+  overflow-wrap: break-word;
+}
+
+.newfeed .newfeed__header .svgicon-box svg {
+  height: 1.5em;
+  fill: rgba(29, 161, 242, 1);
+}
+
+.newfeed .newfeed__header .svgicon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+  height: 39px;
+  width: 39px;
+}
+
+.newfeed .newfeed__header .svgicon-box:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+  transition-property: background-color;
+  transition-duration: 0.2s;
+}
+
+/* New Feed Form section */
+
+.newfeed .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+.newfeed .container .newfeed_avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 49px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.newfeed .container .newfeed_avatar img {
+  height: 49px;
+  border-radius: 100%;
+}
+
+.newfeed .container .newfeed__form {
+  display: flext;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.newfeed .container .newfeed__form .newfeed__form_input {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: rgb(101, 119, 134);
+  font-size: 19px;
+  font-weight: 400;
+  font-family: Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  padding-bottom: calc(12px);
+  padding-top: calc(12px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.newfeed .container .newfeed__form .newfeed__form_input input {
+  color: #222222;
+  font-size: inherit;
+  font-weight: inherit;
+  border: none;
+  outline: none;
+  padding: 3px 0px;
+}
+
+.newfeed .container .newfeed__form .newfeed__form_input input::placeholder {
+  color: rgb(101, 119, 134);
+}
+
+.newfeed__form_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 49px;
+}
+
+.newfeed__form_buttons_left {
+  height: 49px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  vertical-align: text-bottom;
+  margin-top: 10px;
+  align-items: flex-end;
+}
+
+.newfeed__form_buttons_left .svgicon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgba(29, 161, 242, 1);
+  min-width: 39px;
+  height: 39px;
+  vertical-align: text-bottom;
+  font-size: 15px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.newfeed__form_buttons_left .svgicon:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+  transition-property: background-color;
+  transition-duration: 0.2s;
+}
+
+.newfeed__form_buttons_left .svgicon svg {
+  color: rgba(29, 161, 242, 1);
+  vertical-align: text-bottom;
+  font-size: 15px;
+  width: 22.5px;
+  fill: rgba(29, 161, 242, 1);
+}
+
+.newfeed__form_buttons_right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 39px;
+  border-radius: 49px;
+  background-color: rgb(29, 161, 242);
+  margin-top: 0.6rem;
+  cursor: pointer;
+  border: none;
+}
+
+.newfeed__form_buttons_right button {
+  text-align: center;
+  color: white;
+  font-family: Roboto, Ubuntu, sans-serif;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+}
+
+.feed__divider {
+  width: 100%;
+  height: 10px;
+  background-color: rgb(230, 236, 240);
+}
