@@ -175,6 +175,10 @@ body {
   color: #1da1f2;
 }
 
+.header_logo h1 a {
+  color: #1da1f2;
+}
+
 .tweet {
   display: flex;
   justify-content: center;
