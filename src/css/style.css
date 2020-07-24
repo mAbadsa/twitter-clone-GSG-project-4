@@ -215,14 +215,6 @@ body {
   font-weight: bold;
 }
 
-.sidbar {
-  display: flex;
-  justify-self: flex-end;
-  background-color: crimson;
-  width: 25%;
-  min-height: 49px;
-}
-
 /* User menu option */
 
 .hedaer-container__user {
