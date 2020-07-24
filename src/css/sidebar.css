@@ -144,6 +144,15 @@
   border-radius: 15px;
   background-color: rgb(245, 248, 250);
   margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.trend__header:hover,
+.trend__body:hover,
+.trend__footer:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  transition-property: background-color;
+  transition-duration: 0.2s;
 }
 
 .trend__header {
@@ -154,6 +163,9 @@
   width: 100%;
   border-bottom: 1px solid rgb(230, 236, 240);
   padding: 10px 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  cursor: pointer;
 }
 
 .trend__header .trend__header_title .trend__header_text {
@@ -204,6 +216,7 @@
   border-bottom: 1px solid rgb(230, 236, 240);
   padding: 10px 15px;
   font-family: Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  cursor: pointer;
 }
 
 .trend__body_item-box {
@@ -282,10 +295,178 @@
   color: rgba(29, 161, 242, 1);
   font-size: 15px;
   font-weight: 400;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  cursor: pointer;
 }
 
 .trend .trend__footer a {
   color: inherit;
   font: inherit;
   text-decoration: none;
+}
+
+/* follow section styles */
+
+.follow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: start;
+  width: 100%;
+  border-radius: 15px;
+  background-color: rgb(245, 248, 250);
+  margin-top: 5px;
+}
+
+.follow__header:hover,
+.follow__body:hover,
+.follow__footer:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  transition-property: background-color;
+  transition-duration: 0.2s;
+}
+
+.follow__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgb(230, 236, 240);
+  padding: 10px 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  cursor: pointer;
+}
+
+.follow__header .follow__header_title .follow__header_text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 19px;
+  font-weight: 900;
+  margin-right: 0.5em;
+  color: rgb(20, 23, 26);
+  font-family: Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+.follow__header .follow__header_title .follow__header_text h3 {
+  margin: 0px;
+  font-size: inherit;
+  font-weight: inherit;
+  margin-right: 0.5em;
+  color: inherit;
+}
+
+.follow__body {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgb(230, 236, 240);
+  padding: 10px 15px;
+  font-family: Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  cursor: pointer;
+}
+
+.follow__body_item-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.follow__body_item-box a {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+
+.user-vatar-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 49px;
+  margin-right: 10px;
+}
+
+.user-vatar-box img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 49px;
+  height: 49px;
+  border-radius: 100%;
+}
+
+.follow__body-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+.follow__body-data h4 {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 15px;
+  color: rgb(20, 23, 26);
+  font-family: inherit;
+}
+
+.follow-username {
+  font-size: 13px;
+  color: rgb(101, 119, 134);
+  font-weight: 400;
+}
+
+.follow-username p {
+  margin: 0px;
+}
+
+.follow__footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  color: rgba(29, 161, 242, 1);
+  font-size: 15px;
+  font-weight: 400;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  cursor: pointer;
+}
+
+.follow__footer a {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+
+.follow__body_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  min-width: 79px;
+  min-height: 30px;
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.2s;
+  color: rgba(29, 161, 242, 1);
+  font-weight: bold;
+  font-size: 15px;
+  font-family: Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  border: 1px solid rgba(29, 161, 242, 1);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.follow__body_button:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+  transition-property: background-color;
+  transition-duration: 0.2s;
 }
