@@ -585,3 +585,29 @@ span {
 .tweet-interactive_value span {
   font-size: inherit;
 }
+
+/* new comment form style */
+
+.new-comment-form-box {
+  display: none;
+  position: absolute;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.new-comment-form-box form input {
+  color: #222222;
+  font-size: inherit;
+  font-weight: inherit;
+  border: none;
+  outline: none;
+  padding: 3px 0px;
+}
+
+.new-comment-form-box form input::placeholder {
+  color: rgb(101, 119, 134);
+}
+
+.to-block {
+  display: block !important;
+}
