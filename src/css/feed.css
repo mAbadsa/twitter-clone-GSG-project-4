@@ -105,7 +105,7 @@ span {
   border-radius: 100%;
 }
 
-.newfeed .container .newfeed__form {
+.newfeed .container .newfeed__form-box {
   display: flext;
   flex-direction: column;
   justify-content: flex-start;
@@ -113,7 +113,7 @@ span {
   width: 100%;
 }
 
-.newfeed .container .newfeed__form .newfeed__form_input {
+.newfeed .container .newfeed__form-box .newfeed__form_input {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -127,7 +127,7 @@ span {
   box-sizing: border-box;
 }
 
-.newfeed .container .newfeed__form .newfeed__form_input input {
+.newfeed .container .newfeed__form-box .newfeed__form_input input {
   color: #222222;
   font-size: inherit;
   font-weight: inherit;
@@ -136,7 +136,7 @@ span {
   padding: 3px 0px;
 }
 
-.newfeed .container .newfeed__form .newfeed__form_input input::placeholder {
+.newfeed .container .newfeed__form-box .newfeed__form_input input::placeholder {
   color: rgb(101, 119, 134);
 }
 
