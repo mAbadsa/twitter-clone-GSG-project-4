@@ -7,7 +7,7 @@ export class Tweet {
     username,
     likes,
     retweet,
-    comment,
+    comments,
     tweeterAvatar,
     createdAt
   ) {
@@ -18,7 +18,7 @@ export class Tweet {
     this.username = username;
     this.likes = likes;
     this.retweet = retweet;
-    this.comment = comment;
+    this.comments = comments;
     this.tweeterAvatar = tweeterAvatar;
     this.createdAt = createdAt;
   }

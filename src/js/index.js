@@ -3,8 +3,9 @@ import { Tweet } from "./models/tweet.model.js";
 const $tweetContainer = document.getElementById("tweet-container");
 let $addComment;
 let $newCommentFormBox;
-
-console.log($addComment);
+let $addButton;
+let $cancelButton;
+let $commentInput;
 
 const state = {
   userlogin: {
@@ -15,7 +16,7 @@ const state = {
   },
 };
 
-const tweetsArray = [
+let tweetsArray = [
   {
     id: `${"New Tweet".substr(0, 2).toUpperCase()}_${Math.floor(
       Math.random() * 100000
@@ -26,7 +27,7 @@ const tweetsArray = [
     username: state.userlogin.username,
     likes: 0,
     retweet: 0,
-    comment: [],
+    comments: [],
     tweeterAvatar: state.userlogin.avatar,
     createdAt: new Date().toISOString(),
   },
@@ -40,11 +41,15 @@ const tweetsArray = [
     username: state.userlogin.username,
     likes: 0,
     retweet: 0,
-    comment: [],
+    comments: [],
     tweeterAvatar: state.userlogin.avatar,
     createdAt: new Date().toISOString(),
   },
 ];
+
+if (!window.localStorage.getItem("tweet")) {
+  window.localStorage.setItem("tweet", JSON.stringify(tweetsArray));
+}
 
 const $newFeedForm = document.getElementById("newfeed_form");
 
@@ -140,15 +145,24 @@ function listTweet(tweet) {
                             </svg>
                           </div>
                           <div class="tweet-interactive_value">
-                            <span>${tweet.comment}</span>
+                            <span>${tweet.comments.length}</span>
                           </div>
-                          <div class="new-comment-form-box_${
-                            tweet.id
-                          }" style="display: none">
-                              <form id="new-comment-form">
-                                <input name="newComment" class="new-comment-input" />
-                                <button type="submit">Add</button>
-                              </form>
+                          <div class="new-comment-form-box_${tweet.id}">
+                            <h2>Comment</h2>
+                            ${tweet.comments.map(
+                              (comment) => `
+                              <div class="comment">
+                                <div style="margin-right: 5px; margin-top: 4px"><img src="./src/image/avatar/images_5.jpg" style="width: 30px; border-radius: 100%"/></div>
+                                <p>${comment}</p>
+                             </div>`
+                            )}
+                            <div class="form-group">
+                                <div id="new-comment-form">
+                                    <input name="newComment" class="new-comment-input" placeholder="Type your comment." />
+                                    <button id="add-comment">Add</button>
+                                    <button id="cancel-comment">Cancel</button>
+                                </div>
+                            </div>
                           </div>
                         </div>
                         <div class="tweet-interactive_box_content">
@@ -204,29 +218,85 @@ function listTweet(tweet) {
     `;
   const $divContainer = document.createElement("div");
   $divContainer.innerHTML = tweetListTemplate;
+  $divContainer.classList.add("showfeed-container-template");
   const tweetItem = $tweetContainer.appendChild($divContainer);
+  //   const $showfeeds = document.getElementsByClassName("showfeeds");
+  //   $tweetContainer.innerHTML = tweetListTemplate;
+  //   $divContainer.classList.add("showfeed-container-template");
+  //   const tweetItem = $showfeeds.appendChild($tweetContainer);
   return tweetItem;
 }
 
 function renderListOfTweet() {
-  tweetsArray.forEach((tweet) => {
+  let storageTweet = JSON.parse(window.localStorage.getItem("tweet"));
+  storageTweet.forEach((tweet) => {
+    // console.log(tweet);
     listTweet(tweet);
-    $addComment = document.getElementById(`new-comment-icon_${tweet.id}`);
-    $newCommentFormBox = document.getElementsByClassName(
-      `new-comment-form-box_${tweet.id}`
-    )[0];
-    console.log($addComment);
-    console.log($newCommentFormBox);
+    $addComment = document.querySelector(`#new-comment-icon_${tweet.id}`);
+    // $addComment = document.querySelectorAll(`[id^=new-comment-icon_]`);
+    $newCommentFormBox = document.querySelector(
+      `.new-comment-form-box_${tweet.id}`
+    );
 
-    $addComment.addEventListener("click", function () {
-      console.log("sdsdsds");
+    console.log($addComment);
+
+    $addButton = document.querySelector(
+      `.new-comment-form-box_${tweet.id} .form-group #new-comment-form #add-comment`
+    );
+    $cancelButton = document.querySelector(
+      `.new-comment-form-box_${tweet.id} .form-group #new-comment-form #cancel-comment`
+    );
+    $commentInput = document.querySelector(
+      `.new-comment-form-box_${tweet.id} #new-comment-form .new-comment-input`
+    );
+
+    // $addComment.forEach((el) => {
+    //   el.addEventListener("click", function (e) {
+    //     $newCommentFormBox = document.querySelector(
+    //       `.new-comment-form-box_${tweet.id}`
+    //     );
+    //     $newCommentFormBox.classList.add("to-block");
+    //   });
+    // });
+
+    $addComment.addEventListener("click", function (e) {
+      //   console.log($newCommentFormBox);
+      $newCommentFormBox = document.querySelector(
+        `.new-comment-form-box_${tweet.id}`
+      );
       $newCommentFormBox.classList.add("to-block");
-      console.log($newCommentFormBox);
+    });
+
+    $addButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      tweetsArray = [...storageTweet];
+
+      tweetsArray.filter((item) => {
+        $commentInput = document.querySelector(
+          `.new-comment-form-box_${item.id} #new-comment-form .new-comment-input`
+        );
+
+        return item.id === tweet.id && tweet.comments.push($commentInput.value);
+      });
+
+      window.localStorage.setItem("tweet", JSON.stringify(tweetsArray));
+
+      $commentInput.value = "";
+
+      $newCommentFormBox.classList.remove("to-block");
+
+      window.location.reload();
+    });
+
+    $cancelButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      $newCommentFormBox.classList.remove("to-block");
     });
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function (e) {
+  e.preventDefault();
   $newFeedForm.addEventListener("submit", function (evt) {
     evt.preventDefault();
     $tweetContainer.innerHTML = "";
@@ -247,7 +317,11 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     //   console.log(newTweet);
     tweetsArray.push(newTweet);
+
+    window.localStorage.setItem("tweet", JSON.stringify(tweetsArray));
+
     evt.target[0].value = "";
+
     console.log(tweetsArray);
     renderListOfTweet();
   });
