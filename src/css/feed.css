@@ -487,7 +487,7 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   font-weight: 400;
   font-size: 15px;
   color: rgb(20, 23, 26);
@@ -495,8 +495,20 @@ span {
   overflow-wrap: break-word;
   line-height: 1.3125;
   overflow-wrap: break-word;
-  max-width: 100%;
+  width: 100%;
 }
+
+.tweet-box__body_content a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  background-color: transparent;
+  text-decoration: none;
+}
+
 .tweet-box__body_content_text {
   font-weight: inherit;
   font-size: inherit;
@@ -692,4 +704,88 @@ div[class^="new-comment-form-box"] .comment {
   border-radius: 20px;
   width: 75%;
   box-sizing: border-box;
+}
+
+.tweet_comments-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column-reverse;
+  border-top: 1px solid rgb(230, 236, 240);
+  width: 100%;
+}
+
+.tweet_comments-container .tweet-box__useravatar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 5px;
+}
+
+.tweet_comments-container .tweet-box_tweet-data {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 5px;
+  width: 100%;
+}
+
+.tweet_comments-container .tweet-box_tweet-data .user-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 2px;
+  color: inherit;
+  font-size: inherit;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.tweet_comments-container > div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.tweet_comments-container .user-data .user-name {
+  color: rgb(20, 23, 26);
+  font-weight: bold;
+  font-size: inherit;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tweet_comments-container .user-data .user-name .user-name_text {
+  color: rgb(20, 23, 26);
+  font-weight: inherit;
+  font-size: inherit;
+  margin: 0px;
+}
+
+.tweet_comments-container .user-data .user-username .user-username_text {
+  color: rgb(101, 119, 134);
+  font-weight: 400;
+  font-size: inherit;
+  margin: 0px;
+  margin-left: 5px;
+}
+
+.tweet_comments-container .tweet-box_tweet-data .tweet_createdAt {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  color: inherit;
+  font-size: inherit;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.tweet_comments-container .tweet-box_tweet-data .tweet_createdAt span {
+  color: inherit;
+  font-size: inherit;
 }

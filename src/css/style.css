@@ -282,3 +282,33 @@ body {
   text-transform: uppercase;
   font-size: 15px;
 }
+
+.user-option_list-box {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: -123px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px 0 rgb(230, 236, 240);
+}
+
+.d-block {
+  display: block;
+}
+
+.user-option_list-box .user-list_header,
+.user-option_list-box .user-option_logout-box {
+  height: 60px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(230, 236, 240);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.user-option_list-box .user-option_logout-box {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom: none;
+}
